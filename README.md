@@ -1,4 +1,4 @@
-# Assignment-3
+# Individual Project
 
 ## To use ChatBotWithWordnet.py you need to pip install vaderSentiment, NLTK, and tkinter
 ## To user ChatBotWitPyDictionary.py you need to pip install PyDictionary, vaderSentiment, NLTK, and tkinter
