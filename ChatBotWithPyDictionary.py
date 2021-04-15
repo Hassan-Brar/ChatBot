@@ -207,7 +207,7 @@ def TweetCheck(userInput):
         return boo
 
 def getTweet(userInput):
-    conkey = ""
+    conkey = "" #need to add your own credentials for security reasons
     consec= ""
     tokenacc=""
     tokensec= ""
