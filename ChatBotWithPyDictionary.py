@@ -207,10 +207,10 @@ def TweetCheck(userInput):
         return boo
 
 def getTweet(userInput):
-    conkey = "uSikW8cjymxM9yVeUF3GHZNEd"
-    consec= "wT1oTheCIO0IHeTHaikNOpNGYBumPSlltuybKtAPkvJozUjqnv"
-    tokenacc="598595203-qGVTD86iXILIXMBM4LV1AGad1Ly0kh4akhYWGVaC"
-    tokensec= "5wm79p7oFiqcDjyVDknjODxGUE6b4KpjmkVpvPZVxYbzO"
+    conkey = ""
+    consec= ""
+    tokenacc=""
+    tokensec= ""
     auth = tweepy.OAuthHandler(conkey, consec)
     auth.set_access_token(tokenacc, tokensec)
     api = tweepy.API(auth)
