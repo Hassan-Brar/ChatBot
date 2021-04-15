@@ -26,43 +26,19 @@ Tell me about lebron
 
 # Twitter API
 
-In order to the twitter API, you will need to run "pip install Tweepy". The twitter API was implemented 
+In order to the twitter API, you will need to run "pip install Tweepy". The twitter API was implemented for the use of getting a twitter users most recent tweet. The API is invoked by the user tpying 'show me __ tweets', where the blank is the twitter username. It is not casesensitive even though some twitter usernames have capitals in them, the API treats them all as lowercase. The output even prints out emojis and proper text from the requested users timeline.
+
 Example convo:
 
-what is the premier league?
+show me elonmusk tweets
 
-                                                       The Premier League is the top division of soccer in England.
+                                                       @sadiaslayy @DogecoinBets 😮@lexfridman One of many reasons that we need to make life multiplanetary!
                                                        
-do you think i could go to a premier league game for $100?
+show me kingjames tweets
 
-                                                       Sorry. I don't understand currency well. Can you try again?
+                                                       @Rhuigi 🩳 &amp; 🧥 is 🔥🔥🔥🔥🔥🔥🔥🔥🤣🤣🤣🤣🤣🤣🤣🤣🤣. Gotta love it! https://t.co/GqpqgAb3sR
                                              
-i was born in 1999, who won the premier league that year?
+show me uberfacts tweets
 
-                                                       Sorry, I am unfamiliar with that year. Can you try again?
-
-Named Entity Recognition(NER) was implemented into the chatbot using NLTK's tagging and word tokenizer features along with the averaged perception tagger library in NLTK. The bot seeks and extracts each word the user types and breaks it apart with the word tokenizer. It then prints to console each individual words and it's association with the english language.  Associations such as pronouns, verbs, and adjectives are printed along with its tokened key as part of an array that includes all words of the user's input.  This feature helps programmers recognize the sentence structure the user inputs and can articulate additional conversation pair according to the logged inputs.
-
-Example:
-
-my name is James
-
-                                                       [('my', 'PRP$'), ('name', 'NN'), ('is', 'VBZ'), ('james', 'NNS')]
-                                                       
-I play soccer
-
-                                                       [('I', 'PRP'), ('play', 'VBP'), ('soccer', 'NN')]
-                                                       
-                                                       
-Synonym Recognition was implemented into the chatbot in two different versions, one using the PyDictionary library, the other using NLTK's WordNet. They both function the same, passing words to the libraries which return synonyms for the words. To reduce memory usage only verbs and adjectives are passed to the libraries and then the sentence the user inputed is mutated to see if changing a synonym in will make the chatbot recognize the statement as a pair. We are somewhat restricted by libraries, as some words aren't properly recognized as synonyms, such as 'Best' being a synonym of 'greatest' but 'greatest' not being a synonym of 'best' according to the library. As you can see by the example below, the chatbot will reply with the same response to both statements.
-
-Example:
-
-I witness hockey
-
-                                                          Who is your favourite hockey player?
-                                            
-I watch hockey                            
-
-                                                          Who is your favourite hockey player?
+                                                       RT @UberFacts: Due to the bond dogs and humans have had over history, dogs have evolved to understand the meaning of human laughter. They k…Unique facts about the greatest Abstract Expressionist painters 👨🏻‍🎨 https://t.co/NVbzHp4HGq
 
