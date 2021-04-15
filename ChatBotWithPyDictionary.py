@@ -1,6 +1,7 @@
 import nltk
 import tkinter
 import string
+import wikipedia
 from tkinter import *
 from nltk.chat.util import Chat, reflections
 from nltk.tokenize import word_tokenize
@@ -11,8 +12,9 @@ nltk.download('wordnet')
 nltk.download('averaged_perceptron_tagger')
 from nltk import word_tokenize
 from PyDictionary import PyDictionary
-
-
+import tweepy
+import pandas as pd
+import os
 
 # This is a modified converse function from nltk.chat.util
 class modifiedChat(Chat):
@@ -142,6 +144,8 @@ def sendClick():
     truth = checkForCurrency(userInput)
     truth1 = checkForNum(userInput)
     truth2 = checkPolarity(userInput)
+    truth3= CheckText(userInput)
+    truth4 = TweetCheck(userInput)
     if (truth == True):
         reply = "Sorry. I don't understand currency well. Can you try again?"
     else:
@@ -151,7 +155,14 @@ def sendClick():
             if (truth2 == True):
                 reply = "Well that does not seem very nice!"
             else:
-                reply = tryConverseWithSynonyms(userInput)
+                if(truth3==True):
+                    reply = wiki(userInput)
+                else:
+                    if(truth4==True):
+                        reply = getTweet(userInput)
+                    else:
+                        reply = tryConverseWithSynonyms(userInput)
+                
     output = ""
     chatWin.configure(state="normal")
     if "To begin" in chatWin.get("1.0", END):
@@ -162,9 +173,59 @@ def sendClick():
     chatWin.insert(END, output)
     chatWin.see(END)
     chatWin.configure(state="disabled")
+    
+#Wikipedia api
+def wiki(userInput): #Getting info from wiki if available
+    Text = userInput.lower().split()
+    reply=""
+    for i in range(2, len(Text)):
+        reply = reply + Text[i] + " "
+    try:
+        reply = wikipedia.summary(reply, sentences = 1)
+        return reply
+    except :
+        reply = "I dont know anything about that. Ask me something else"
+        return reply
 
+def CheckText(userInput): #Checking if wiki function should be used
+    Text = userInput.lower().split()
+    boo = False
+    if (Text[0] == 'what' and Text[1] == 'is'):
+        boo = True
+        return boo
+    else:
+        return boo
 
+#Twitter API
+def TweetCheck(userInput):
+    Text = userInput.lower().split()
+    boo = False
+    if (Text[0] == 'show' and Text[1] == 'me' and Text[3] == 'tweets'):
+        boo = True
+        return boo
+    else:
+        return boo
 
+def getTweet(userInput):
+    conkey = "uSikW8cjymxM9yVeUF3GHZNEd"
+    consec= "wT1oTheCIO0IHeTHaikNOpNGYBumPSlltuybKtAPkvJozUjqnv"
+    tokenacc="598595203-qGVTD86iXILIXMBM4LV1AGad1Ly0kh4akhYWGVaC"
+    tokensec= "5wm79p7oFiqcDjyVDknjODxGUE6b4KpjmkVpvPZVxYbzO"
+    auth = tweepy.OAuthHandler(conkey, consec)
+    auth.set_access_token(tokenacc, tokensec)
+    api = tweepy.API(auth)
+    
+    Text = userInput.lower().split()
+    reply=""
+    twitterUser = Text[2]
+    cursor = tweepy.Cursor(api.user_timeline, id=twitterUser, tweet_mode="extended").items(2)
+    try:
+        for tweet in cursor:
+            reply = reply + (tweet.full_text)
+        return reply
+    except :
+        reply = "I dont know that twitter user"
+        return reply
 
 # generate the  and run the chat interface
 def beginClick():
@@ -263,6 +324,7 @@ pairs = [
     ['(.*) computers (.*)?', ['Ask me about sports. I can not understand anything else but sports']],
     ['(.*) clothes (.*)?', ['I am not a fashion bot. I am sports bot, ask about topics related to sports']],
     ['', ['Sorry can you try again, I do not understand']],
+    ['Do you know about (.*)', [wiki('%1')]],
     ['(.*)', ['Sorry can you try again I do not understand']],
 ]
 
