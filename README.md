@@ -4,6 +4,8 @@ This is a project to create a functional chatbot for COSC 310. The user should b
 
 This bot was built off the Assignment 3 that was developed by team 3 in the class COSC 310. The previous repository: https://github.com/COSC-310-Team-3/Assignment-3
 
+ChatbotWithPyDictionary.py is the file where the code executed from
+
 ## New Features
 New features have been implemented in this bot, including a Wikipedia API and a Twitter API
 
