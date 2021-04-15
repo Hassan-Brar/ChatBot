@@ -7,25 +7,26 @@ New features have been implemented in this bot, including a Wikipedia API and a 
 
 # Wikipeadia API
 
-In order to run the wikipedia API, you will need first run "pip install wikipedia". The wikipedia API adds to the bots intelligence and is activated by the user asking in the format 'what is __', where the blank is the topic the bot searches wikipedia for
+In order to run the wikipedia API, you will need first run "pip install wikipedia". The wikipedia API adds to the bots intelligence and is activated by the user asking in the format 'what is __', where the blank is the topic the bot searches wikipedia for. The definition of the topic is returned only if the bot finds it on wikipedia, and if that topic is not on wikipedia, the bot throws an exception and replies with a defualt response. The API is very finicky because if the topic is not spelled correctly then it will give a default response.
 
 Example convo:
 
-when is the next world cup?
+Tell me about basketball
 
-                                                      Next year in Qatar
+                                                      Basketball is a team sport in which two teams, most commonly of five players each, opposing one another on a rectangular court, compete with the primary objective of shooting a basketball (approximately 9.4 inches (24 cm) in diameter) through the defender's hoop (a basket 18 inches (46 cm) in diameter mounted 10 feet (3.048 m) high to a backboard at each end of the court) while preventing the opposing team from shooting through their own hoop.
                                                       
-who will win the next world cup?
+Tell me about hockey
 
-                                                      Canada, no doubt. They are a soccer powerhouse
+                                                      Hockey is a sport in which two teams play against each other by trying to manoeuvre a ball or a puck into the opponent's goal using a hockey stick.
                                                       
-what are you talking about?? Canada sucks at soccer!
+Tell me about lebron
 
-                                                      Well that does not seem very nice!
+                                                      Lebanon ( (listen)), officially known as the Lebanese Republic, is a country in Western Asia.
                 
 
-POS tagging adds to the bot by splitting up every individual word in the user input, and then assigning each word a grammatical category. This was implemented by using the 'words_tokenize' and 'pos_tag' functions from the nltk tool. The bot is programmed to identify currencies and numerical values (to detect years), and will then give a specific response. The bot will also print out a list of each word and its associated part of speech tag.
+# Twitter API
 
+In order to the twitter API, you will need to run "pip install Tweepy". The twitter API was implemented 
 Example convo:
 
 what is the premier league?
