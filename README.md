@@ -1,15 +1,13 @@
 # Individual Project
 
-## To use ChatBotWithWordnet.py you need to pip install vaderSentiment, NLTK, and tkinter
-## To user ChatBotWitPyDictionary.py you need to pip install PyDictionary, vaderSentiment, NLTK, and tkinter
+This is a project to create a functional chatbot for COSC 310. The user should be able to hold basic conversation with the bot about sports. The role the agent will take is that of a friend, and the user can ask the agent questions about sports. This program uses modified code from https://github.com/nltk/nltk/blob/develop/nltk/chat/util.py which is open source.
 
-This is a project to create a functional chatbot for COSC 310. The user should be able to hold basic conversation with the bot about sports. The role the agent will take is that of a friend, and the user can ask the agent questions about sports. This bot was built off of the previous bot created in assignment 2.
-ChatBot.ipynb was migrated to ChatBot.py, see commits to Chatbot.ipynb to see original structure of code before it was migrated and the contributors
-This program uses modified code from https://github.com/nltk/nltk/blob/develop/nltk/chat/util.py which is open source.
+## New Features
+New features have been implemented in this bot, including a Wikipedia API and a Twitter API
 
-New features have been implemented in this bot, including POS tagging, sentiment analysis, entity recognition, and synonym recognition.
+# Wikipeadia API
 
-Sentiment analysis adds to the bot by analyzing the user input, judging the overall sentiment, and providing an appropriate response if necessary. This was done by using the 'SentimentIntensityAnalyzer' function from the 'vaderSentiment' tool. When the user inputs a question/phrase, it is assigned a numerical value based on the overall sentiment (positive is a generally nice input, negative is a generally mean input). If the phrase is negative, the bot will get angry and tell the user it wasn't nice.
+In order to run the wikipedia API, you will need first run "pip install wikipedia". The wikipedia API adds to the bots intelligence and is activated by the user asking in the format 'what is __', where the blank is the topic the bot searches wikipedia for
 
 Example convo:
 
