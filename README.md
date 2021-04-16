@@ -10,7 +10,7 @@ Video Link:
 ## New Features
 New features have been implemented in this bot, including a Wikipedia API and a Twitter API
 
-# Wikipeadia API
+# Wikipedia API
 
 In order to run the wikipedia API, you will need first run "pip install wikipedia". The wikipedia API adds to the bots intelligence and is activated by the user asking in the format 'Tell me about __', where the blank is the topic the bot searches wikipedia for. The definition of the topic is returned only if the bot finds it on wikipedia, and if that topic is not on wikipedia, the bot throws an exception and replies with a defualt response. The API is very finicky because if the topic is not spelled correctly then it will give a default response.
 
