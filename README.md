@@ -1,6 +1,6 @@
 # Individual Project
 
-This is a project to create a functional chatbot for COSC 310. The user should be able to hold basic conversation with the bot about sports. The role the agent will take is that of a friend, and the user can ask the agent questions about sports. This program uses modified code from https://github.com/nltk/nltk/blob/develop/nltk/chat/util.py which is open source.
+This is a project where we create a functional chatbot for COSC 310. The user should be able to hold basic conversation with the bot about sports. The role the agent will take is that of a friend, and the user can ask the agent questions about sports. This program uses modified code from https://github.com/nltk/nltk/blob/develop/nltk/chat/util.py which is open source.
 
 This bot was built off the Assignment 3 that was developed by team 3 in the class COSC 310. The previous repository: https://github.com/COSC-310-Team-3/Assignment-3
 
