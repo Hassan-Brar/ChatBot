@@ -6,7 +6,7 @@ This bot was built off the Assignment 3 that was developed by team 3 in the clas
 
 ChatbotWithPyDictionary.py is the file where the code executed
 
-Video Link:
+Video Link: https://youtu.be/ah2Fw6ZAqkk
 ## New Features
 New features have been implemented in this bot, including a Wikipedia API and a Twitter API
 
